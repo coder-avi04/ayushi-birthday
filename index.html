@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ayushi 💖</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow: hidden;
+}
+
+/* Floating hearts & balloons */
+.floating span {
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp linear infinite;
+    font-size: 24px;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    animation: fadeIn 1.2s ease;
+    z-index: 10;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+h1 {
+    color: #ff4d6d;
+    font-size: 26px;
+}
+
+h2 {
+    color: #444;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    font-size: 15.5px;
+    line-height: 1.7;
+}
+
+.heart {
+    font-size: 42px;
+    animation: beat 1.4s infinite;
+}
+
+@keyframes beat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#surprise {
+    display: none;
+    background: #fff0f3;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+/* Countdown */
+.countdown {
+    font-size: 20px;
+    color: #ff4d6d;
+    margin: 10px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Elements -->
+<div class="floating" id="floating"></div>
+
+<div class="container">
+    <div class="card">
+        <div class="heart">💗</div>
+
+        <h1>Happy 22nd Birthday 🎉</h1>
+        <h2>Ayushi Didi 💕</h2>
+
+        <div class="countdown" id="countdown"></div>
+
+        <p>
+            Today is not just your birthday,  
+            it’s a celebration of your smile,
+            kindness, and beautiful heart 🌸
+        </p>
+
+        <button onclick="showSurprise()">Tap for Surprise 🎁</button>
+
+        <div id="surprise">
+            💫 Ayushi Didi, you are my biggest blessing —  
+            my guide, my support, and my forever safe place 💖  
+            <br><br>
+            May your 22nd year be filled with success,
+            peace, love, and countless happy moments 🌷  
+            <br><br>
+            Always stay this amazing ✨  
+            Love you forever 💝
+        </div>
+    </div>
+</div>
+
+<script>
+// Surprise message
+function showSurprise() {
+    document.getElementById("surprise").style.display = "block";
+}
+
+// Floating hearts & balloons
+const emojis = ["💖","💗","🎈","🎈","💕","💘"];
+const floating = document.getElementById("floating");
+
+for(let i=0; i<30; i++){
+    let span = document.createElement("span");
+    span.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+    span.style.left = Math.random()*100 + "vw";
+    span.style.animationDuration = (5 + Math.random()*5) + "s";
+    span.style.fontSize = (20 + Math.random()*20) + "px";
+    floating.appendChild(span);
+}
+
+// Countdown (set birthday date if needed)
+const countdown = document.getElementById("countdown");
+// Example: Birthday already today message
+countdown.innerHTML = "🎂 Today is your special day! 🎂";
+
+// If you want real countdown, tell me date & time
+</script>
+
+</body>
+</html>
